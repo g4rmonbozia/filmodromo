@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@350;500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+:root{
+	--header: #eee;
+    --conteudo: white;
+    --text_conteudo: #000;
+    --text_header: #000;
+	--metacrit: #aaa;
+	--metapub: #aaa;
+    --trilha: #000;
+    --text_trilha: #fff;
+}
+
+html{
+	font-size: 16px
+}
+
+body{
+	margin: 0;
+    background-color: var(--header);
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none  /* Firefox */
+}
+
+ul::-webkit-scrollbar {
+  display: none
+}
+
+li {
+    display:inline-block;
+    margin: 0 10px
+}
+
+#capa{
+	width:100%;
+    height: 200px;
+	object-fit: cover;
+    object-position: 0% 0%;
+	z-index:-1
+}
+
+#header{
+	display: grid;
+    grid-gap: 5px;
+    margin: auto;
+    text-align: center;
+	font-family: 'Roboto Slab', serif;
+    font-weight: lighter;
+	justify-content: center;
+	grid-template-columns: 300px 350px 300px;    
+	background-color: var(--header);
+    color: var(--text_header)
+}
+
+/*Poster*/
+
+#poster{
+	margin-top:-100px;
+}
+
+#poster > img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width:90%;
+	border: 7px solid var(--header)
+}
+
+#poster > #must-see{
+	margin-top: -50px;
+}
+
+
+/*Informações do Filme*/
+
+#filme > h1{
+	font-weight: 800;
+	line-height: 40px;
+	padding-bottom: 0;
+}
+
+#filme > p {
+	font-size: 14px;
+}
+
+#filme img{
+    vertical-align: middle;
+}
+
+#info{
+	font-weight: 500;
+}
+
+#sinopse{
+	text-align: justify;
+	padding: 0 15px;
+}
+
+
+/*Elenco*/
+
+#elenco > p{
+    display:block;
+    text-align: right;
+    font-weight: 500;
+}
+
+
+#elenco > .wrapper{
+    position: relative;
+}
+
+#elenco > ul{
+		width: 100%;
+		float: right;
+		clear: right;
+		margin-bottom: 15px;
+}
+
+#elenco li{
+		width: 80px;
+		vertical-align: top;
+}
+
+#elenco li > p {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+		white-space: normal
+}
+
+#elenco li > p:first-of-type {
+    font-weight: 500;
+}
+
+#perfil{
+    width:50px;
+    height:50px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+/*Abas*/
+
+#abas{
+    font-size: 14px;
+    margin-top: 17px;
+    font-weight: 500;
+}
+
+#abas li{
+    padding: 10px;
+    border-top: 2px solid var(--header);
+    box-sizing: border-box;
+}
+
+#abas li:hover{
+    border-top: 2px solid var(--text_header);
+    cursor: pointer;
+}
+
+#abas li:active{
+    background-color: var(--conteudo)
+}
+
+#abas li:nth-child(1){
+    background-color: var(--conteudo);
+    color: var(--text_conteudo)
+}
+
+/*Conteúdo*/
+
+#conteudo{
+    background-color: var(--conteudo);
+    flex-grow: 1;
+}
+
+.conteudo{
+    font-size: 19px;
+    line-height: 30px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    color: var(--text_conteudo);
+    display: none;
+    padding: 20px calc((100vw - 950px)/2);
+    padding-bottom: 50px;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.conteudo h2{
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.conteudo iframe{
+    width: 100%;
+    height: 500px
+}
+
+#conteudo > div:nth-child(1){
+    display: block;
+}
+
+
+/*Grid Layout*/
+
+#poster{grid-area: 1 / 1 / 3 / 2}
+#filme{grid-area: 1 / 2 / 3 / 3}
+#elenco{grid-area: 1 / 3 / 3 / 4}
+#selos{grid-area: 3 / 1 / 4 / 2}
+#consenso{grid-area: 3 / 2 / 4 / 4}
+#abas{grid-area: 4 / 1 / 5 / 4}
+
+/*Intermediário*/
+@media only screen and (max-width:980px){
+    
+    #header{
+        grid-template-columns: 300px 300px;
+    }
+    
+    .conteudo{
+        padding: 10px calc((100vw - 600px)/2)
+    }
+
+    /*Grid Layout*/
+    
+    #elenco{grid-area: 3 / 1 / 4 / 3}
+    #selos{grid-area: 4 / 1 / 5 / 2}
+    #consenso{grid-area: 4 / 2 / 5 / 3}
+    #abas{grid-area: 5 / 1 / 6 / 3}
+
+}
+
+/*Celular*/
+@media only screen and (orientation: portrait) {
+    
+	#capa{
+		height: 400px;
+        object-position: 50% 50%;
+	}
+
+	#header{
+        grid-template-columns: 100%;
+		justify-content: center;
+	}
+    
+    /*Poster*/
+    
+	#poster{
+		margin-top: -200px;
+		width:100%;
+	}
+
+	#poster > img {
+		width:60%;
+	}
+
+	#poster > #must-see{
+		margin-top: -10%;
+		width: 12%
+	}
+
+	#poster > p{
+		font-size: 36px
+	}
+
+    /*Informações do Filme*/
+    
+	#filme{
+		width: 95%;
+		margin: auto
+	}
+    
+	#titulo{
+		font-size: 50px;
+		line-height: 100px
+	}
+
+    /*Elenco*/
+    
+	#elenco > p{
+		margin-right: 10px
+	}
+    
+    /*Selos*/
+    
+	#selos{
+		margin: 30px 0;
+	}
+
+    /*Consenso*/
+    
+	#consenso{
+		width: 90%;
+		margin: auto;
+		border-left: 1vw solid var(--metacrit);
+	}
+    
+    /*Conteúdo*/
+    
+    .conteudo{
+        padding: 10px 5vw;
+        font-size: 18px;
+        padding-bottom: 100px;
+    }
+    
+    /*Player*/
+    
+    #player{
+        display:block;
+        height: 100px;
+        padding-bottom: 10px;
+    }
+    
+    #info_trilha{
+        height: 50px;
+        margin: auto
+    }
+    
+    #controls{
+        margin: auto;
+    }
+
+	/*Grid Layout*/
+    
+	#poster{grid-area: 1 / 1 / 2 / 2}
+	#titulo{grid-area: 2 / 1 / 3 / 2}
+	#filme{grid-area: 3 / 1 / 4 / 2}
+	#selos{grid-area: 5 / 1 / 6 / 2}
+	#consenso{grid-area: 6 / 1 / 7 / 2}
+	#elenco{grid-area: 7 / 1 / 8 / 2}
+	#abas{grid-area: 8 / 1 / 9 / 2}    
+}

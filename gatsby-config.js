@@ -1,10 +1,15 @@
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
   siteMetadata: {
     title: `Filmódromo`,
-    siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [],
+  plugins: [
+    {
+      resolve: "gatsby-source-filesystem",
+      options:{
+        name: `filmes`,
+        path: `${__dirname}/filmes`,
+      },
+    },
+    "gatsby-plugin-mdx"
+  ],
 }
