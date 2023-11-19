@@ -25,10 +25,10 @@ const PropostaPage = () => {
   
     return (
         <Layout>
-            <h2>Entre em Contato:</h2>
+            <h2>Envie sua proposta:</h2>
             <div className="container">
             <form name="form_hook" method="post" onSubmit={handleSubmit(onSubmit)}
-                data-netlify="true" data-netlify-honeypot="bot-field">
+                data-netlify="true" data-netlify-honeypot="bot-field" netlify>
                 <input type="hidden" name="form-name" value="form_hook" />
                 <label>
                 Nome
