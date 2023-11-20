@@ -2,6 +2,7 @@ import * as React from "react"
 import "../../components/filme.css"
 import { graphql } from "gatsby"
 import Layout from "../../components/layout"
+import Pessoa from "../../components/pessoa"
 
 const abrirAba = (id) => {
     var abas = document.getElementById("abas").firstElementChild.children
@@ -38,9 +39,7 @@ const Filme = ({ data, children }) => {
                         {
                             data.mdx.frontmatter.cast.map((actor) => (
                                 <li>
-                                    <img src='' alt=''/>
-                                    <p>{actor[0]}</p>
-                                    <p>{actor[1]}</p>
+                                    <Pessoa id={actor[0]} func={actor[1]}></Pessoa>
                                 </li>
                             
                             ))
@@ -49,11 +48,9 @@ const Filme = ({ data, children }) => {
                     <p>FICHA TÉCNICA</p>
                     <ul>
                     {
-                            data.mdx.frontmatter.crew.map((actor) => (
+                            data.mdx.frontmatter.crew.map((person) => (
                                 <li>
-                                    <img src='' alt=''/>
-                                    <p>{actor[0]}</p>
-                                    <p>{actor[1]}</p>
+                                    <Pessoa id={person[0]} func={person[1]}></Pessoa>
                                 </li>
                             
                             ))

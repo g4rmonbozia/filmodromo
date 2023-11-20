@@ -1,4 +1,5 @@
 import * as React from "react"
+import "../../components/filme.css"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../../components/layout"
 
@@ -24,18 +25,19 @@ const FilmesPage = () => {
 
     return (
         <Layout>
-            <p>Filmes</p>
-            {
-                data.allMdx.nodes.map((node) =>(
-                    <article key={node.id}>
-                        <Link to={node.frontmatter.slug}>
-                            <h2>{node.frontmatter.title}</h2>
-                        </Link>                        
-                        <p>{node.frontmatter.date}</p>
-                        <img alt={node.frontmatter.title} src={node.frontmatter.poster} />
-                    </article>
-                ))
-            }
+            <div id="content">
+                <p>Aqui estão alguns dos filmes idealizados:</p>
+                <div id="producoes">
+                {
+                    data.allMdx.nodes.map((node) =>(
+                        <div className="poster" style={{backgroundImage: 'url(' + node.frontmatter.poster + ')'}}>
+                            <Link to={'/filmes/' + node.frontmatter.slug}><span style={{textDecoration: 'none'}}>{node.frontmatter.title}</span></Link>      
+                        </div>
+                    ))
+                }
+                </div>
+            </div>
+            
         </Layout>
     )
 }
