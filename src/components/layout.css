@@ -3,12 +3,12 @@
     height: 95vh;
     display: grid;
     grid: "header" auto "main" 1fr "footer" auto / 1fr;
-    background-color: aliceblue;
+    background-color:#fff;
 }
 
 .header {
     grid-area: header;
-    background-color: aquamarine;
+    background-color: #fff;
     padding: 10px;
 }
 
@@ -17,15 +17,8 @@
     padding: 10px;
 }
 
-/* .footer {
-    grid-area: footer;
-    background-color: aquamarine;
-    padding: 10px;
-} */
-
 .topnav {
     overflow: hidden;
-    background-color: #AECFDF;
 }
 
 .topnav a {
@@ -38,6 +31,13 @@
 }
 
 .topnav a:hover {
-    background-color: #9F9FAD;
-    color: black;
+    color: #f00;
 }
+
+.footer {
+    grid-area: footer;
+    background-color: #fff;
+    padding: 10px;
+    color: #000;
+    text-align: center;
+  }

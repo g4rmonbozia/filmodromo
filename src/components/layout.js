@@ -22,7 +22,7 @@ export default function Layout({ children }) {
                 <h3>{data.site.siteMetadata.title}</h3>
                 <nav className="topnav">
                     <Link to="/">Início</Link>
-                    <Link to="/filmes">Filme</Link>
+                    <Link to="/filmes">Filmes</Link>
                     <Link to="/proposta">Enviar Proposta</Link>
                 </nav>
             </div>

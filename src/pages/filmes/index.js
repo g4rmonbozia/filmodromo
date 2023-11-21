@@ -1,5 +1,5 @@
 import * as React from "react"
-import "../../components/filme.css"
+import "./style.css"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../../components/layout"
 

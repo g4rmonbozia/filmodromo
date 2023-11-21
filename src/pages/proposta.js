@@ -1,4 +1,5 @@
 import * as React from "react"
+import "./proposta.css"
 import { useForm } from "react-hook-form";
 import Layout from "../components/layout"
 
@@ -25,7 +26,7 @@ const PropostaPage = () => {
   
     return (
         <Layout>
-            <h2>Envie sua proposta:</h2>
+            <h2>Envie sua proposta</h2>
             <div className="container">
             <form name="form_hook" method="post" onSubmit={handleSubmit(onSubmit)}
                 data-netlify="true" data-netlify-honeypot="bot-field" netlify>

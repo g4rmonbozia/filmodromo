@@ -1,5 +1,5 @@
 import * as React from "react"
-import "../../components/filme.css"
+import "./style.css"
 import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import Pessoa from "../../components/pessoa"
@@ -23,14 +23,14 @@ const abrirAba = (id) => {
 const Filme = ({ data, children }) => {
     return (
         <Layout>
-            <img id="capa" src='' alt="" />
+            <img id="capa" src={data.mdx.frontmatter.capa} alt="" />
             <div id="header">
                 <div id="poster">
                     <img src={data.mdx.frontmatter.poster} alt="" />
                 </div>
                 <div id="filme">
                     <h1>{data.mdx.frontmatter.title}</h1>
-                    <p id="info">{data.mdx.frontmatter.date} &#x2022; {data.mdx.frontmatter.paises.join(" / ")} &#x2022; {data.mdx.frontmatter.generos}</p>
+                    <p id="info">{data.mdx.frontmatter.date} &#x2022; {data.mdx.frontmatter.paises.join(" / ")} &#x2022; {data.mdx.frontmatter.generos.join(" / ")}</p>
                     <p id="sinopse">{data.mdx.frontmatter.sinopse}</p>
                 </div>
                 <div id="elenco">
@@ -83,6 +83,7 @@ export const query = graphql`
                 cast
                 crew
                 poster
+                capa
             }
             excerpt
         }

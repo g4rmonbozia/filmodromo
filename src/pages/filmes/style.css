@@ -16,6 +16,7 @@ html{
 	font-size: 16px
 }
 
+
 body{
 	margin: 0;
     background-color: var(--header);
@@ -47,7 +48,7 @@ li {
 	width:100%;
     height: 200px;
 	object-fit: cover;
-    object-position: 0% 0%;
+    object-position: 50% 50%;
 	z-index:-1
 }
 
@@ -320,10 +321,6 @@ li {
 
 .poster > a > span{
     text-wrap: wrap;
-}
-
-.poster > .material-icons{
-    font-size: 50px;
 }
 
 
