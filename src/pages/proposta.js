@@ -19,7 +19,7 @@ const PropostaPage = () => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "form_hook", ...dados })
       }).then(() => {
-        alert("Em breve daremos um retorno do seu contato. Obrigado!");
+        alert("Em breve daremos um retorno a sua proposta!");
         reset();
       }).catch(error => alert(error));
     };
